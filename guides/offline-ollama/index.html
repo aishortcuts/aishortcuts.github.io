@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Offline AI Writing Assistant with Ollama on Windows, macOS and Linux – AI Shortcuts</title>
+<meta name="description" content="Run AI Shortcuts with a local Ollama model so your text never leaves your computer. Step-by-step setup for private, offline proofreading and rewriting.">
+<link rel="canonical" href="https://aishortcuts.github.io/guides/offline-ollama/">
+<link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/offline-ollama/">
+<link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/offline-ollama/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Offline AI Writing Assistant with Ollama on Windows, macOS and Linux – AI Shortcuts">
+<meta property="og:description" content="Run AI Shortcuts with a local Ollama model so your text never leaves your computer. Step-by-step setup for private, offline proofreading and rewriting.">
+<meta property="og:url" content="https://aishortcuts.github.io/guides/offline-ollama/">
+<meta property="og:image" content="https://aishortcuts.github.io/media/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 44 32 16l14 28M23 36h18' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AI Shortcuts", "item": "https://aishortcuts.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aishortcuts.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to use Ollama for private, offline AI writing help", "item": "https://aishortcuts.github.io/guides/offline-ollama/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use Ollama for private, offline AI writing help", "description": "Run AI Shortcuts with a local Ollama model so your text never leaves your computer. Step-by-step setup for private, offline proofreading and rewriting.", "inLanguage": "en", "step": [{"@type": "HowToStep", "name": "Install Ollama", "text": "Download Ollama from ollama.com and install it. It runs a local server on port 11434."}, {"@type": "HowToStep", "name": "Download a model", "text": "In a terminal run: ollama pull llama3.1:8b (or another model that fits your RAM)."}, {"@type": "HowToStep", "name": "Set up the provider", "text": "Open AI Shortcuts → Settings → AI Providers, choose Ollama (For Experts), set API Base URL to http://localhost:11434 and API Model to llama3.1:8b."}, {"@type": "HowToStep", "name": "Try a command", "text": "Select some text, press the hotkey and run Proofread. The request goes to your own machine."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need an internet connection?", "acceptedAnswer": {"@type": "Answer", "text": "Only to download Ollama and the model. After that, AI Shortcuts with Ollama works offline."}}, {"@type": "Question", "name": "Does it cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ollama and open models are free. You use your own computer’s resources."}}, {"@type": "Question", "name": "Can I use LM Studio or llama.cpp instead?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the OpenAI Compatible provider and point its base URL at the local server."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="/">AI Shortcuts</a>
+  <nav><a href="/#features">Features</a><a href="/#download">Download</a><a href="/guides/">Guides</a><a href="/vi/guides/offline-ollama/">Tiếng Việt</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
+</header>
+<main class="article">
+<p class="crumbs"><a href="/guides/">Guides</a></p>
+<h1>How to use Ollama for private, offline AI writing help</h1>
+<p class="answer">Install Ollama, download a model, then set the <b>Ollama</b> provider in AI Shortcuts to <code>http://localhost:11434</code> with your model name. Your text stays on your computer and no API key is needed.</p><h2>Step by step</h2><ol><li><b>Install Ollama.</b> Download Ollama from ollama.com and install it. It runs a local server on port 11434.</li><li><b>Download a model.</b> In a terminal run: ollama pull llama3.1:8b (or another model that fits your RAM).</li><li><b>Set up the provider.</b> Open AI Shortcuts → Settings → AI Providers, choose Ollama (For Experts), set API Base URL to http://localhost:11434 and API Model to llama3.1:8b.</li><li><b>Try a command.</b> Select some text, press the hotkey and run Proofread. The request goes to your own machine.</li></ol><pre>ollama pull llama3.1:8b
+ollama run llama3.1:8b "hello"   # quick test</pre><h2>Tips</h2><ul><li>Smaller models run on modest hardware but write less well. Try a larger model if your computer has enough memory.</li><li>The setting “Time to keep the model loaded in memory in minutes” controls how long Ollama keeps the model ready between requests.</li><li>You can mix providers: use Ollama for private text and a cloud model for harder tasks by setting a provider per command.</li></ul><h2>FAQ</h2><details><summary>Do I need an internet connection?</summary><p>Only to download Ollama and the model. After that, AI Shortcuts with Ollama works offline.</p></details><details><summary>Does it cost anything?</summary><p>No. Ollama and open models are free. You use your own computer’s resources.</p></details><details><summary>Can I use LM Studio or llama.cpp instead?</summary><p>Yes. Use the OpenAI Compatible provider and point its base URL at the local server.</p></details>
+<section><h2>Related guides</h2><ul><li><a href="/guides/free-gemini-writing-assistant/">Use Google Gemini’s free tier as your writing assistant</a></li><li><a href="/guides/summarize-pages-and-videos/">Summarize web pages, documents and YouTube videos</a></li><li><a href="/guides/custom-commands/">Create your own commands: commit messages, support replies and more</a></li></ul></section>
+<section class="cta"><h2>Download AI Shortcuts</h2><p>Free and open source for Windows, macOS and Linux.</p><a class="btn" href="/#download">Get it free</a></section>
+</main>
+<footer>
+  Free and open source (GPL-3.0). Built by <a href="https://github.com/gemkids275">Nam Trần</a>.<br>
+  <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Report an issue</a> · <a href="https://ko-fi.com/gemkids">☕ Support on Ko-fi</a>
+</footer>
+</div>
+</body>
+</html>
