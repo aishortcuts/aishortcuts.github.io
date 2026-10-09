@@ -34,3 +34,19 @@ code,pre{font:14px/1.5 ui-monospace,Menlo,Consolas,monospace}
 pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto}
 footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 40px;color:var(--muted);font-size:14px;text-align:center}
 @media (max-width:640px){.demo{grid-template-columns:1fr}}
+.article{max-width:760px;margin:0 auto;padding:8px 0 20px}
+.article h1{font-size:clamp(26px,4.5vw,38px);line-height:1.2;margin:8px 0 16px}
+.article h2{margin:30px 0 10px}
+.article .answer{font-size:19px;background:var(--card);border-left:4px solid var(--accent);padding:14px 18px;border-radius:8px}
+.article ol,.article ul{padding-left:22px}
+.article li{margin:6px 0}
+.crumbs{font-size:14px;margin:0}
+kbd{background:var(--card);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font:13px ui-monospace,Menlo,Consolas,monospace}
+.example{margin:18px 0}
+.ex-label{font-size:13px;font-weight:600;color:var(--muted);margin:10px 0 4px;text-transform:uppercase;letter-spacing:.04em}
+.example pre{white-space:pre-wrap;word-wrap:break-word;margin:0}
+.example pre.after{border-left:4px solid var(--accent)}
+.cta{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin:34px 0 10px}
+.guide-card{text-decoration:none;color:var(--fg)}
+.guide-card:hover{border-color:var(--accent)}
+.article pre{white-space:pre-wrap;word-wrap:break-word}

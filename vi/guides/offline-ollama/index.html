@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trợ lý viết AI ngoại tuyến với Ollama trên Windows, macOS và Linux – AI Shortcuts</title>
+<meta name="description" content="Chạy AI Shortcuts với mô hình Ollama cục bộ để văn bản không rời khỏi máy. Hướng dẫn từng bước sửa lỗi và viết lại ngoại tuyến, riêng tư.">
+<link rel="canonical" href="https://aishortcuts.github.io/vi/guides/offline-ollama/">
+<link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/offline-ollama/">
+<link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/offline-ollama/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trợ lý viết AI ngoại tuyến với Ollama trên Windows, macOS và Linux – AI Shortcuts">
+<meta property="og:description" content="Chạy AI Shortcuts với mô hình Ollama cục bộ để văn bản không rời khỏi máy. Hướng dẫn từng bước sửa lỗi và viết lại ngoại tuyến, riêng tư.">
+<meta property="og:url" content="https://aishortcuts.github.io/vi/guides/offline-ollama/">
+<meta property="og:image" content="https://aishortcuts.github.io/media/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 44 32 16l14 28M23 36h18' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AI Shortcuts", "item": "https://aishortcuts.github.io/vi/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn", "item": "https://aishortcuts.github.io/vi/guides/"}, {"@type": "ListItem", "position": 3, "name": "Cách dùng Ollama để viết với AI riêng tư, ngoại tuyến", "item": "https://aishortcuts.github.io/vi/guides/offline-ollama/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Cách dùng Ollama để viết với AI riêng tư, ngoại tuyến", "description": "Chạy AI Shortcuts với mô hình Ollama cục bộ để văn bản không rời khỏi máy. Hướng dẫn từng bước sửa lỗi và viết lại ngoại tuyến, riêng tư.", "inLanguage": "vi", "step": [{"@type": "HowToStep", "name": "Cài Ollama", "text": "Tải Ollama từ ollama.com và cài đặt. Nó chạy một máy chủ cục bộ ở cổng 11434."}, {"@type": "HowToStep", "name": "Tải mô hình", "text": "Trong terminal chạy: ollama pull llama3.1:8b (hoặc mô hình khác vừa với RAM của bạn)."}, {"@type": "HowToStep", "name": "Cấu hình nhà cung cấp", "text": "Mở AI Shortcuts → Settings → AI Providers, chọn Ollama (For Experts), đặt API Base URL là http://localhost:11434 và API Model là llama3.1:8b."}, {"@type": "HowToStep", "name": "Thử một lệnh", "text": "Chọn văn bản, nhấn phím tắt và chạy Proofread. Yêu cầu chỉ đi tới chính máy của bạn."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Có cần internet không?", "acceptedAnswer": {"@type": "Answer", "text": "Chỉ để tải Ollama và mô hình. Sau đó AI Shortcuts với Ollama chạy ngoại tuyến."}}, {"@type": "Question", "name": "Có tốn phí không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Ollama và các mô hình mở miễn phí. Bạn dùng tài nguyên máy của mình."}}, {"@type": "Question", "name": "Dùng LM Studio hoặc llama.cpp được không?", "acceptedAnswer": {"@type": "Answer", "text": "Được. Dùng nhà cung cấp OpenAI Compatible và trỏ base URL tới máy chủ cục bộ."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="/vi/">AI Shortcuts</a>
+  <nav><a href="/vi/#features">Tính năng</a><a href="/vi/#download">Tải về</a><a href="/vi/guides/">Hướng dẫn</a><a href="/guides/offline-ollama/">English</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
+</header>
+<main class="article">
+<p class="crumbs"><a href="/vi/guides/">Hướng dẫn</a></p>
+<h1>Cách dùng Ollama để viết với AI riêng tư, ngoại tuyến</h1>
+<p class="answer">Cài Ollama, tải một mô hình, rồi đặt nhà cung cấp <b>Ollama</b> trong AI Shortcuts là <code>http://localhost:11434</code> cùng tên mô hình. Văn bản ở lại trên máy bạn và không cần API key.</p><h2>Từng bước</h2><ol><li><b>Cài Ollama.</b> Tải Ollama từ ollama.com và cài đặt. Nó chạy một máy chủ cục bộ ở cổng 11434.</li><li><b>Tải mô hình.</b> Trong terminal chạy: ollama pull llama3.1:8b (hoặc mô hình khác vừa với RAM của bạn).</li><li><b>Cấu hình nhà cung cấp.</b> Mở AI Shortcuts → Settings → AI Providers, chọn Ollama (For Experts), đặt API Base URL là http://localhost:11434 và API Model là llama3.1:8b.</li><li><b>Thử một lệnh.</b> Chọn văn bản, nhấn phím tắt và chạy Proofread. Yêu cầu chỉ đi tới chính máy của bạn.</li></ol><pre>ollama pull llama3.1:8b
+ollama run llama3.1:8b "hello"   # kiểm tra nhanh</pre><h2>Mẹo</h2><ul><li>Mô hình nhỏ chạy được trên máy yếu nhưng viết kém hơn. Thử mô hình lớn hơn nếu máy đủ bộ nhớ.</li><li>Cài đặt “Time to keep the model loaded in memory in minutes” quyết định Ollama giữ mô hình trong bộ nhớ bao lâu giữa các yêu cầu.</li><li>Có thể kết hợp: dùng Ollama cho văn bản riêng tư và mô hình đám mây cho việc khó, bằng cách đặt nhà cung cấp riêng cho từng lệnh.</li></ul><h2>Hỏi đáp</h2><details><summary>Có cần internet không?</summary><p>Chỉ để tải Ollama và mô hình. Sau đó AI Shortcuts với Ollama chạy ngoại tuyến.</p></details><details><summary>Có tốn phí không?</summary><p>Không. Ollama và các mô hình mở miễn phí. Bạn dùng tài nguyên máy của mình.</p></details><details><summary>Dùng LM Studio hoặc llama.cpp được không?</summary><p>Được. Dùng nhà cung cấp OpenAI Compatible và trỏ base URL tới máy chủ cục bộ.</p></details>
+<section><h2>Hướng dẫn liên quan</h2><ul><li><a href="/vi/guides/free-gemini-writing-assistant/">Dùng gói miễn phí của Google Gemini làm trợ lý viết</a></li><li><a href="/vi/guides/summarize-pages-and-videos/">Tóm tắt trang web, tài liệu và video YouTube</a></li><li><a href="/vi/guides/custom-commands/">Tạo lệnh riêng: viết commit message, trả lời khách hàng và hơn thế</a></li></ul></section>
+<section class="cta"><h2>Tải AI Shortcuts</h2><p>Miễn phí, mã nguồn mở cho Windows, macOS và Linux.</p><a class="btn" href="/vi/#download">Tải miễn phí</a></section>
+</main>
+<footer>
+  Miễn phí và mã nguồn mở (GPL-3.0). Thực hiện bởi <a href="https://github.com/gemkids275">Nam Trần</a>.<br>
+  <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Báo lỗi</a> · <a href="https://ko-fi.com/gemkids">☕ Ủng hộ trên Ko-fi</a>
+</footer>
+</div>
+</body>
+</html>
