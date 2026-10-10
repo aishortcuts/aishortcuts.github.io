@@ -113,6 +113,12 @@ figure {
   .wrap {
     padding: 0 16px;
   }
+
+  footer {
+    font-size: 13.5px;
+    padding: 28px 0 40px;
+    line-height: 1.9;
+  }
 }
 
 /* Header & Navigation */
@@ -913,6 +919,138 @@ kbd {
   color: var(--accent);
 }
 
+/* Home Page Popular Guides Section */
+#guides .grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#guides .guide-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  box-sizing: border-box;
+}
+
+#guides .guide-card .card-icon {
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+#guides .guide-card:hover .card-icon {
+  transform: translateY(-2px);
+}
+
+#guides .guide-card h3 {
+  font-size: 17.5px;
+  line-height: 1.45;
+  margin: 0 0 16px;
+  flex: 1 1 auto;
+  color: var(--fg);
+}
+
+#guides .guide-card .card-link-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  transition: gap 0.15s ease, color 0.15s ease;
+}
+
+#guides .guide-card:hover .card-link-text {
+  gap: 8px;
+  color: var(--accent-hover);
+}
+
+#guides > p {
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+#guides > p a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--accent);
+  transition: gap 0.15s ease, color 0.15s ease;
+}
+
+#guides > p a:hover {
+  gap: 10px;
+  color: var(--accent-hover);
+}
+
+/* About Page & Paragraph-based Tips Sections */
+.tips-section:has(> p) {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 28px;
+  margin: 20px 0;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tips-section:has(> p):hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.tips-section:has(> p) h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.015em;
+}
+
+.tips-section:has(> p) h2::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.tips-section:has(> p) p {
+  margin: 0 0 14px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--fg);
+  max-width: 68ch;
+}
+
+.tips-section:has(> p) p:last-child {
+  margin-bottom: 0;
+}
+
+.tips-section:has(> p) a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(37, 99, 235, 0.4);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.tips-section:has(> p) a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: var(--accent);
+}
+
 /* Download CTA in articles & footer */
 .cta {
   text-align: center;
@@ -951,16 +1089,19 @@ kbd {
 footer {
   border-top: 1px solid var(--line);
   margin-top: 48px;
-  padding: 30px 0 48px;
+  padding: 32px 0 48px;
   color: var(--muted);
   font-size: 14px;
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.85;
 }
 
 footer a {
   color: var(--muted);
   font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+  transition: color 0.15s ease;
 }
 
 footer a:hover {
@@ -998,7 +1139,19 @@ footer a:hover {
 }
 
 /* Responsive Breakpoints */
+@media (max-width: 768px) {
+  #guides .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 680px) {
+  .tips-section:has(> p) {
+    padding: 20px 18px;
+    margin: 16px 0;
+  }
+
   .demo {
     grid-template-columns: 1fr;
   }
