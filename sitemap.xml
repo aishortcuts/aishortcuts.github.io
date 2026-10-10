@@ -11,6 +11,31 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/"/>
   </url>
   <url>
+    <loc>https://aishortcuts.github.io/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/about/"/>
+  </url>
+  <url>
+    <loc>https://aishortcuts.github.io/vi/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/about/"/>
+  </url>
+  <url>
+    <loc>https://aishortcuts.github.io/guides/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/"/>
+  </url>
+  <url>
+    <loc>https://aishortcuts.github.io/vi/guides/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/"/>
+  </url>
+  <url>
+    <loc>https://aishortcuts.github.io/guides/ai-writing-assistant-hotkey-windows/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/ai-writing-assistant-hotkey-windows/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/ai-writing-assistant-hotkey-windows/"/>
+  </url>
+  <url>
     <loc>https://aishortcuts.github.io/guides/custom-commands/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/custom-commands/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/custom-commands/"/>
@@ -19,11 +44,6 @@
     <loc>https://aishortcuts.github.io/guides/free-gemini-writing-assistant/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/free-gemini-writing-assistant/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/free-gemini-writing-assistant/"/>
-  </url>
-  <url>
-    <loc>https://aishortcuts.github.io/guides/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/"/>
   </url>
   <url>
     <loc>https://aishortcuts.github.io/guides/offline-ollama/</loc>
@@ -46,6 +66,11 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/summarize-pages-and-videos/"/>
   </url>
   <url>
+    <loc>https://aishortcuts.github.io/vi/guides/ai-writing-assistant-hotkey-windows/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/ai-writing-assistant-hotkey-windows/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/ai-writing-assistant-hotkey-windows/"/>
+  </url>
+  <url>
     <loc>https://aishortcuts.github.io/vi/guides/custom-commands/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/custom-commands/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/custom-commands/"/>
@@ -54,11 +79,6 @@
     <loc>https://aishortcuts.github.io/vi/guides/free-gemini-writing-assistant/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/free-gemini-writing-assistant/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/free-gemini-writing-assistant/"/>
-  </url>
-  <url>
-    <loc>https://aishortcuts.github.io/vi/guides/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/"/>
   </url>
   <url>
     <loc>https://aishortcuts.github.io/vi/guides/offline-ollama/</loc>
