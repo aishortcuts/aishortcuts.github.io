@@ -25,62 +25,143 @@
 <body>
 <div class="wrap">
 <header class="top">
-  <a class="brand" href="/">AI Shortcuts</a>
+  <a class="brand" href="/">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#2563eb"/><path d="M18 44 32 16l14 28M23 36h18" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>AI Shortcuts</span>
+  </a>
   <nav><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="/guides/">Guides</a><a href="vi/">Tiếng Việt</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
 </header>
 
 <main>
 <section class="hero">
+  <div class="hero-pill">Free &amp; Open Source · GPL-3.0</div>
   <h1>Fix, rewrite and summarize text in any app with one hotkey</h1>
   <p class="lead">AI Shortcuts is a free, open-source AI writing assistant for Windows, macOS and Linux. Select text, press the shortcut, pick a command, and the result replaces your text in place.</p>
-  <a class="btn" href="#download">Download free</a>
-  <a class="btn alt" href="https://github.com/gemkids275/AIShortcuts">View on GitHub</a>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="#download">Download free</a>
+    <a class="btn alt" href="https://github.com/gemkids275/AIShortcuts">View on GitHub</a>
+  </div>
 </section>
 
 <div class="demo">
-  <figure><img src="media/windows-proofread.gif" width="760" height="511" alt="Windows: select text, press the hotkey, choose Proofread" loading="eager"><figcaption>Windows &amp; Linux</figcaption></figure>
-  <figure><img src="media/macos-proofread.gif" width="680" height="432" alt="macOS: select text, press the hotkey, choose a command" loading="lazy"><figcaption>macOS</figcaption></figure>
+  <figure class="app-window">
+    <div class="window-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="win-title">Windows &amp; Linux</span></div>
+    <img src="media/windows-proofread.gif" width="760" height="511" alt="Windows: select text, press the hotkey, choose Proofread" loading="eager">
+    <figcaption>Windows &amp; Linux</figcaption>
+  </figure>
+  <figure class="app-window">
+    <div class="window-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="win-title">macOS</span></div>
+    <img src="media/macos-proofread.gif" width="680" height="432" alt="macOS: select text, press the hotkey, choose a command" loading="lazy">
+    <figcaption>macOS</figcaption>
+  </figure>
 </div>
 
 <section id="features">
   <h2>Why AI Shortcuts</h2>
   <div class="grid">
-    <div class="card"><h3>One hotkey, any app</h3><p>Works in your editor, browser, chat and email. No copy-paste into a chat tab.</p></div>
-    <div class="card"><h3>Your commands</h3><p>Proofread, Rewrite, Friendly, Professional, Concise, Summary, Key Points, Table, or any prompt you write. Reorder, back up and share them.</p></div>
-    <div class="card"><h3>Your model</h3><p>Cloud or local, with a different provider or model per command.</p></div>
-    <div class="card"><h3>Private by design</h3><p>No telemetry, no ads. Text only goes to the provider you chose. Use Ollama or MLX to stay fully offline.</p></div>
-    <div class="card"><h3>Chat and attachments</h3><p>Ask follow-up questions, attach images or text files, or use chat mode with no selection.</p></div>
-    <div class="card"><h3>Multilingual interface</h3><p>English, Tiếng Việt, Italiano, 日本語 and 简体中文 on Windows and Linux; seven languages on macOS.</p></div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/><line x1="18" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+      </div>
+      <h3>One hotkey, any app</h3>
+      <p>Works in your editor, browser, chat and email. No copy-paste into a chat tab.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+      </div>
+      <h3>Your commands</h3>
+      <p>Proofread, Rewrite, Friendly, Professional, Concise, Summary, Key Points, Table, or any prompt you write. Reorder, back up and share them.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </div>
+      <h3>Your model</h3>
+      <p>Cloud or local, with a different provider or model per command.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Private by design</h3>
+      <p>No telemetry, no ads. Text only goes to the provider you chose. Use Ollama or MLX to stay fully offline.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3>Chat and attachments</h3>
+      <p>Ask follow-up questions, attach images or text files, or use chat mode with no selection.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h3>Multilingual interface</h3>
+      <p>English, Tiếng Việt, Italiano, 日本語 and 简体中文 on Windows and Linux; seven languages on macOS.</p>
+    </div>
   </div>
 </section>
 
 <section>
   <h2>Works with the AI you prefer</h2>
-  <table>
-    <tr><th>Provider</th><th>Type</th></tr>
-    <tr><td>Google Gemini</td><td>Cloud, free tier</td></tr>
-    <tr><td>OpenAI and compatible APIs</td><td>Cloud / local</td></tr>
-    <tr><td>Anthropic Claude</td><td>Cloud</td></tr>
-    <tr><td>Mistral AI</td><td>Cloud</td></tr>
-    <tr><td>OpenRouter (100+ models)</td><td>Cloud</td></tr>
-    <tr><td>Ollama, LM Studio, llama.cpp</td><td>Local</td></tr>
-    <tr><td>MLX on Apple Silicon</td><td>On-device (macOS)</td></tr>
-  </table>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>Type</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Gemini</td><td><span class="tag-pill tag-cloud">Cloud, free tier</span></td></tr>
+        <tr><td>OpenAI and compatible APIs</td><td><span class="tag-pill tag-cloud">Cloud / local</span></td></tr>
+        <tr><td>Anthropic Claude</td><td><span class="tag-pill tag-cloud">Cloud</span></td></tr>
+        <tr><td>Mistral AI</td><td><span class="tag-pill tag-cloud">Cloud</span></td></tr>
+        <tr><td>OpenRouter (100+ models)</td><td><span class="tag-pill tag-cloud">Cloud</span></td></tr>
+        <tr><td>Ollama, LM Studio, llama.cpp</td><td><span class="tag-pill tag-local">Local</span></td></tr>
+        <tr><td>MLX on Apple Silicon</td><td><span class="tag-pill tag-local">On-device (macOS)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <section class="shot">
   <h2>Manage your own commands</h2>
-  <figure><img src="media/windows-commands.png" width="720" height="576" alt="Command Manager: add, reorder, import and export commands" loading="lazy"></figure>
+  <figure class="app-window">
+    <div class="window-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="win-title">AI Shortcuts – Command Manager</span></div>
+    <img src="media/windows-commands.png" width="720" height="576" alt="Command Manager: add, reorder, import and export commands" loading="lazy">
+    <figcaption>Command Manager: add, reorder, import and export commands</figcaption>
+  </figure>
 </section>
 
 <section id="download">
   <h2>Download</h2>
   <div class="dl">
-    <div class="card"><h3>Windows</h3><p>Windows 10 or later, 64-bit.</p><a class="btn" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-windows-x64.exe">Download .exe</a></div>
-    <div class="card"><h3>macOS</h3><p>macOS 14 Sonoma or later.</p><a class="btn" href="https://github.com/gemkids275/AIShortcuts/releases/download/v1.0/AI_Shortcuts_v1.0.dmg">Download .dmg</a></div>
-    <div class="card"><h3>Linux</h3><p>X11 session, 64-bit.</p><a class="btn" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-linux-x64.tar.gz">Download .tar.gz</a></div>
+    <div class="card">
+      <div class="card-header">
+        <svg class="dl-platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.801"/></svg>
+        <h3>Windows</h3>
+      </div>
+      <p>Windows 10 or later, 64-bit.</p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-windows-x64.exe">Download .exe</a>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <svg class="dl-platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.4c.66-.82 1.11-1.96.99-3.1-.96.04-2.12.64-2.8 1.44-.6.69-1.12 1.83-.98 2.95 1.07.08 2.17-.54 2.79-1.29z"/></svg>
+        <h3>macOS</h3>
+      </div>
+      <p>macOS 14 Sonoma or later.</p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/v1.0/AI_Shortcuts_v1.0.dmg">Download .dmg</a>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <svg class="dl-platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 0c-2.464 0-4.634 1.583-5.32 3.882-.26.868-.262 1.868-.008 2.825.25.942.748 1.83 1.436 2.545-1.92.517-3.415 2.05-3.921 4.018-.54 2.1-.14 4.35 1.08 6.06-1.03.54-1.84 1.45-2.26 2.54-.42 1.09-.34 2.31.22 3.33.56 1.02 1.52 1.76 2.65 2.05 1.13.29 2.34.08 3.32-.57 1.85 1.04 4.04 1.34 6.12.82 2.08-.52 3.84-1.85 4.88-3.68.99.64 2.19.85 3.31.56 1.12-.29 2.07-1.03 2.63-2.05.56-1.02.64-2.24.22-3.33-.42-1.09-1.23-2-2.26-2.54 1.22-1.71 1.62-3.96 1.08-6.06-.51-1.968-2.001-3.501-3.921-4.018.688-.715 1.186-1.603 1.436-2.545.254-.957.252-1.957-.008-2.825C21.955 1.583 19.785 0 17.321 0c-1.393 0-2.73.513-3.766 1.442C12.52.513 13.394 0 12.001 0z"/></svg>
+        <h3>Linux</h3>
+      </div>
+      <p>X11 session, 64-bit.</p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-linux-x64.tar.gz">Download .tar.gz</a>
+    </div>
   </div>
-  <p>All versions and checksums: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Binaries ship with SHA-256 checksums and build provenance.</p>
+  <p class="dl-note">All versions and checksums: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Binaries ship with SHA-256 checksums and build provenance.</p>
 </section>
 
 <section id="faq">
