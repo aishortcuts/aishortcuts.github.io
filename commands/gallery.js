@@ -251,34 +251,68 @@
   }
 
   function renderCard(cmd) {
+    var pickSlug = safeSlug(cmd);
+    var isSelected = pickSlug && !!selected[pickSlug];
+
     var card = document.createElement('article');
-    card.className = 'card cmd-card';
+    card.className = 'card cmd-card' + (isSelected ? ' is-selected' : '');
 
     var header = document.createElement('div');
     header.className = 'cmd-header';
 
-    var titleRow = document.createElement('div');
-    titleRow.className = 'cmd-title-row';
+    var catBadge = document.createElement('div');
+    catBadge.className = 'cmd-cat-badge';
 
     var iconSpan = document.createElement('span');
     iconSpan.className = 'cmd-cat-icon';
     iconSpan.setAttribute('aria-hidden', 'true');
     iconSpan.appendChild(createCategorySvg(cmd.category));
-
-    var nameEl = document.createElement('h3');
-    nameEl.className = 'cmd-name';
-    nameEl.textContent = cmd.name || '';
-
-    titleRow.appendChild(iconSpan);
-    titleRow.appendChild(nameEl);
+    catBadge.appendChild(iconSpan);
 
     var catChip = document.createElement('span');
     catChip.className = 'cmd-category-chip';
     catChip.textContent = getCategoryLabel(cmd.category);
+    catBadge.appendChild(catChip);
 
-    header.appendChild(titleRow);
-    header.appendChild(catChip);
+    header.appendChild(catBadge);
+
+    if (pickSlug) {
+      var selectTarget = document.createElement('label');
+      selectTarget.className = 'cmd-select cmd-select-target';
+      var selectTitle = t.select + ': ' + (cmd.name || pickSlug);
+      selectTarget.title = selectTitle;
+
+      var pickBox = document.createElement('input');
+      pickBox.type = 'checkbox';
+      pickBox.className = 'cmd-select-input';
+      pickBox.checked = isSelected;
+      pickBox.setAttribute('aria-label', selectTitle);
+      pickBox.addEventListener('change', function () {
+        if (pickBox.checked) {
+          selected[pickSlug] = true;
+          card.classList.add('is-selected');
+        } else {
+          delete selected[pickSlug];
+          card.classList.remove('is-selected');
+        }
+        updatePackBar();
+      });
+
+      var hiddenText = document.createElement('span');
+      hiddenText.className = 'visually-hidden';
+      hiddenText.textContent = selectTitle;
+
+      selectTarget.appendChild(pickBox);
+      selectTarget.appendChild(hiddenText);
+      header.appendChild(selectTarget);
+    }
+
     card.appendChild(header);
+
+    var nameEl = document.createElement('h3');
+    nameEl.className = 'cmd-name';
+    nameEl.textContent = cmd.name || '';
+    card.appendChild(nameEl);
 
     // Description: localized fallback
     var descText = '';
@@ -321,6 +355,7 @@
       metaEl.className = 'cmd-meta';
 
       var byLabel = document.createElement('span');
+      byLabel.className = 'cmd-by-label';
       byLabel.textContent = t.by;
       metaEl.appendChild(byLabel);
 
@@ -347,6 +382,7 @@
     details.className = 'cmd-prompt-details';
 
     var summary = document.createElement('summary');
+    summary.className = 'cmd-prompt-summary';
     summary.textContent = t.showPrompt;
     details.appendChild(summary);
 
@@ -361,30 +397,11 @@
     var actions = document.createElement('div');
     actions.className = 'cmd-actions';
 
-    var pickSlug = safeSlug(cmd);
-    if (pickSlug) {
-      var pickLabel = document.createElement('label');
-      pickLabel.className = 'cmd-select';
-      var pickBox = document.createElement('input');
-      pickBox.type = 'checkbox';
-      pickBox.checked = !!selected[pickSlug];
-      pickBox.setAttribute('aria-label', t.select + ': ' + (cmd.name || pickSlug));
-      pickBox.addEventListener('change', function () {
-        if (pickBox.checked) selected[pickSlug] = true;
-        else delete selected[pickSlug];
-        updatePackBar();
-      });
-      var pickText = document.createElement('span');
-      pickText.textContent = t.select;
-      pickLabel.appendChild(pickBox);
-      pickLabel.appendChild(pickText);
-      actions.appendChild(pickLabel);
-    }
-
     var copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 'btn alt cmd-btn-copy';
     copyBtn.textContent = t.copyPrompt;
+    copyBtn.setAttribute('aria-label', t.copyPrompt + ': ' + (cmd.name || ''));
     copyBtn.addEventListener('click', function () {
       copyText(cmd.prompt || '', copyBtn);
     });
@@ -398,6 +415,7 @@
       dlLink.href = '/data/commands/' + encodeURIComponent(slug) + '.json';
       dlLink.setAttribute('download', slug + '.json');
       dlLink.textContent = t.download;
+      dlLink.setAttribute('aria-label', t.download + ': ' + (cmd.name || slug));
       actions.appendChild(dlLink);
     }
 
