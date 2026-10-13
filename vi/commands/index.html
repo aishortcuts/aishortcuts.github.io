@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thư viện lệnh hữu ích – AI Shortcuts</title>
+<meta name="description" content="Khám phá và tải về các lệnh AI dựng sẵn miễn phí do cộng đồng đóng góp cho AI Shortcuts: email, lập trình, viết lách, dịch thuật và tóm tắt. Nhập trực tiếp vào ứng dụng.">
+<link rel="canonical" href="https://aishortcuts.github.io/vi/commands/">
+<link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/commands/">
+<link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/commands/">
+<link rel="alternate" hreflang="x-default" href="https://aishortcuts.github.io/commands/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thư viện lệnh hữu ích – AI Shortcuts">
+<meta property="og:description" content="Các lệnh dựng sẵn để nhập vào AI Shortcuts. Miễn phí, mã nguồn mở và do cộng đồng đóng góp.">
+<meta property="og:url" content="https://aishortcuts.github.io/vi/commands/">
+<meta property="og:image" content="https://aishortcuts.github.io/media/og-image.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 44 32 16l14 28M23 36h18' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AI Shortcuts", "item": "https://aishortcuts.github.io/vi/"}, {"@type": "ListItem", "position": 2, "name": "Lệnh hữu ích", "item": "https://aishortcuts.github.io/vi/commands/"}]}</script>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="/vi/">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#2563eb"/><path d="M18 44 32 16l14 28M23 36h18" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>AI Shortcuts</span>
+  </a>
+  <nav><a href="/vi/#features">Tính năng</a><a href="/vi/commands/">Lệnh</a><a href="/vi/#download">Tải về</a><a href="/vi/#faq">Hỏi đáp</a><a href="/vi/guides/">Hướng dẫn</a><a href="/commands/">English</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
+</header>
+
+<main>
+<section class="commands-hero">
+  <div class="hero-pill">Thư viện cộng đồng</div>
+  <h1>Lệnh hữu ích</h1>
+  <p class="lead">Các lệnh dựng sẵn để nhập vào AI Shortcuts. Miễn phí, mã nguồn mở và do cộng đồng đóng góp.</p>
+</section>
+
+<noscript>
+  <div class="cmd-state-box">
+    <p>Trình duyệt của bạn đang tắt JavaScript. Bạn vẫn có thể duyệt và tải về toàn bộ tệp JSON lệnh trực tiếp trên GitHub:</p>
+    <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/tree/main/commands">Xem danh sách lệnh trên GitHub →</a>
+  </div>
+</noscript>
+
+<section class="commands-controls" aria-label="Tìm kiếm và lọc lệnh">
+  <div class="search-box-wrap">
+    <label for="command-search" class="visually-hidden">Tìm kiếm lệnh</label>
+    <span class="search-icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </span>
+    <input type="search" id="command-search" class="commands-search-input" placeholder="Tìm kiếm lệnh theo tên, thẻ, tác giả hoặc prompt..." autocomplete="off">
+  </div>
+  <div id="category-filters" class="filter-chips" role="group" aria-label="Lọc lệnh theo danh mục"></div>
+</section>
+
+<div id="result-count" class="result-count" aria-live="polite"></div>
+
+<div class="gallery-wrapper">
+<div id="pack-bar" class="pack-bar" hidden>
+  <span id="selected-count" class="pack-count" aria-live="polite"></span>
+  <div class="pack-actions">
+    <button type="button" id="select-visible" class="btn alt">Chọn tất cả đang hiện</button>
+    <button type="button" id="clear-selection" class="btn alt" disabled>Bỏ chọn</button>
+    <button type="button" id="download-selected" class="btn btn-primary" disabled>Tải các lệnh đã chọn (0)</button>
+    <button type="button" id="download-all" class="btn alt">Tải tất cả</button>
+  </div>
+  <p id="pack-error" class="pack-error" role="alert" hidden></p>
+</div>
+
+<div id="gallery-container">
+  <div id="loading-state" class="cmd-state-box">
+    <p>Đang tải danh sách lệnh...</p>
+  </div>
+  <div id="cmd-grid" class="cmd-grid" style="display: none;"></div>
+  <div id="empty-state" class="cmd-state-box" style="display: none;">
+    <p>Không tìm thấy lệnh nào phù hợp với tìm kiếm.</p>
+  </div>
+  <div id="error-state" class="cmd-state-box" style="display: none;">
+    <p>Không thể tải danh sách lệnh lúc này. Vui lòng tải lại trang hoặc xem trực tiếp trên GitHub.</p>
+    <a class="btn alt" href="https://github.com/gemkids275/AIShortcuts/tree/main/commands">Xem trên GitHub</a>
+  </div>
+</div>
+</div>
+
+<section class="tips-section" id="how-to-use">
+  <h2>Cách sử dụng</h2>
+  <ol class="steps-list">
+    <li class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3 class="step-title">Tải về tệp lệnh</h3>
+        <p class="step-text">Nhấp <b>Tải về</b> trên thẻ lệnh để lưu lệnh đó, hoặc tích chọn nhiều thẻ (hay nhấn <b>Chọn tất cả đang hiện</b>) rồi nhấn <b>Tải các lệnh đã chọn</b>. <b>Tải tất cả</b> gói mọi lệnh vào một tệp <code>.json</code>.</p>
+      </div>
+    </li>
+    <li class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3 class="step-title">Mở Cài đặt trong AI Shortcuts</h3>
+        <p class="step-text">Mở AI Shortcuts, vào mục <b>Cài đặt → Lệnh</b> (Settings → Commands) và nhấn nút <b>Nhập…</b> (Import).</p>
+      </div>
+    </li>
+    <li class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3 class="step-title">Chọn tệp vừa tải về</h3>
+        <p class="step-text">Chọn tệp <code>.json</code> đã tải. Mọi lệnh trong tệp sẽ xuất hiện trong danh sách phím tắt và sẵn sàng sử dụng; lệnh bạn đã có được giữ nguyên, bản trùng được thêm với “(Imported)” trong tên.</p>
+        <p class="step-text pack-warning">Hãy dùng <b>Nhập…</b> trong mục <b>Lệnh</b>, không dùng <b>Khôi phục bản sao lưu</b>: khôi phục sẽ thay thế toàn bộ lệnh của bạn. Tệp có nhiều lệnh cần AI Shortcuts cho Windows/Linux hoặc macOS 1.2 trở lên; macOS cũ hơn chỉ nhập lệnh đầu tiên.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="cta" id="share-command">
+  <h2>Chia sẻ lệnh của bạn</h2>
+  <p>Bạn đã tạo được một prompt hữu ích giúp tiết kiệm thời gian? Hãy chia sẻ với cộng đồng! Trong AI Shortcuts, xuất lệnh từ Cài đặt → Lệnh, sau đó mở Pull Request trên kho lưu trữ của chúng tôi.</p>
+  <p class="cta-note" style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">Mọi đóng góp từ cộng đồng đều được kiểm duyệt cẩn thận trước khi hiển thị trên thư viện.</p>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/compare">Tạo Pull Request</a>
+    <a class="btn alt" href="https://github.com/gemkids275/AIShortcuts/blob/main/CONTRIBUTING.md#share-a-command">Hướng dẫn đóng góp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  Miễn phí và mã nguồn mở (GPL-3.0). Thực hiện bởi <a href="https://github.com/gemkids275">Nam Trần</a>.<br>
+  <a href="/vi/about/">Giới thiệu</a> · <a href="/vi/commands/">Lệnh</a> · <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Báo lỗi</a> · <a href="https://ko-fi.com/gemkids">☕ Ủng hộ trên Ko-fi</a>
+</footer>
+</div>
+
+<script src="/commands/gallery.js"></script>
+</body>
+</html>
