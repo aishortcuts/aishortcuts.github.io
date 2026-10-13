@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "generated": "2026-10-13T03:33:45Z",
+  "categories": [
+    "writing",
+    "email",
+    "translation",
+    "summarizing",
+    "coding",
+    "learning",
+    "productivity"
+  ],
+  "commands": [
+    {
+      "slug": "action-items",
+      "name": "Action items",
+      "icon": "checklist",
+      "category": "productivity",
+      "description": {
+        "en": "Pulls tasks, owners and deadlines out of meeting notes or a thread.",
+        "vi": "Rút ra việc cần làm, người phụ trách và hạn từ biên bản họp hoặc chuỗi chat."
+      },
+      "tags": [
+        "meeting",
+        "tasks"
+      ],
+      "author": "gemkids275",
+      "prompt": "From the selected notes or conversation, extract the action items as a Markdown checklist. For each item give the task, the owner if mentioned, and the deadline if mentioned. Ignore discussion that has no action. Answer in the same language as the text.",
+      "useResponseWindow": true,
+      "file": "action-items.json"
+    },
+    {
+      "slug": "commit-message",
+      "name": "Commit message",
+      "icon": "arrow.triangle.branch",
+      "category": "coding",
+      "description": {
+        "en": "Writes a conventional commit message from a diff or a description.",
+        "vi": "Viết commit message chuẩn từ diff hoặc mô tả thay đổi."
+      },
+      "tags": [
+        "git",
+        "commit"
+      ],
+      "author": "gemkids275",
+      "prompt": "The selected text is a code diff or a description of a change. Write a git commit message in the Conventional Commits style: a subject line of at most 72 characters in the imperative mood, then a blank line and a short body that explains what changed and why. Return only the message.",
+      "useResponseWindow": false,
+      "file": "commit-message.json"
+    },
+    {
+      "slug": "explain-simply",
+      "name": "Explain simply",
+      "icon": "lightbulb",
+      "category": "learning",
+      "description": {
+        "en": "Explains the selected text in plain words anyone can follow.",
+        "vi": "Giải thích đoạn văn đã chọn bằng lời đơn giản, ai cũng hiểu."
+      },
+      "tags": [
+        "explain",
+        "learn"
+      ],
+      "author": "gemkids275",
+      "prompt": "Explain the selected text in simple, plain language for someone new to the topic. Use short sentences, define any jargon the first time it appears, and add one concrete example. Answer in the same language as the text.",
+      "useResponseWindow": true,
+      "file": "explain-simply.json"
+    },
+    {
+      "slug": "linkedin-post",
+      "name": "LinkedIn post",
+      "icon": "megaphone",
+      "category": "writing",
+      "description": {
+        "en": "Turns rough notes into a clear, engaging LinkedIn post.",
+        "vi": "Biến ghi chú thô thành bài đăng LinkedIn rõ ràng, thu hút."
+      },
+      "tags": [
+        "social",
+        "linkedin"
+      ],
+      "author": "gemkids275",
+      "prompt": "Turn the selected notes into a LinkedIn post: a strong first line, short paragraphs, concrete details instead of buzzwords, and a closing question. Keep it under 200 words. Do not invent facts. Answer in the same language as the notes.",
+      "useResponseWindow": true,
+      "file": "linkedin-post.json"
+    },
+    {
+      "slug": "polite-decline",
+      "name": "Polite decline",
+      "icon": "hand.raised",
+      "category": "email",
+      "description": {
+        "en": "Turns a blunt refusal into a courteous one.",
+        "vi": "Biến lời từ chối thẳng thành lời từ chối lịch sự."
+      },
+      "tags": [
+        "email",
+        "tone"
+      ],
+      "author": "gemkids275",
+      "prompt": "Rewrite the selected text as a polite, warm refusal. Keep the same decision and the same facts, add a brief thanks, and keep it short. Return only the rewritten text.",
+      "useResponseWindow": false,
+      "file": "polite-decline.json"
+    },
+    {
+      "slug": "reply-to-email",
+      "name": "Reply to email",
+      "icon": "arrowshape.turn.up.left",
+      "category": "email",
+      "description": {
+        "en": "Drafts a clear, friendly reply to the selected email.",
+        "vi": "Soạn thư trả lời rõ ràng, thân thiện cho email đã chọn."
+      },
+      "tags": [
+        "email",
+        "reply"
+      ],
+      "author": "gemkids275",
+      "prompt": "The selected text is an email I received. Write a concise, friendly and professional reply in the same language as the email. Address every question it asks. If information is missing, leave a short [bracketed placeholder]. Return only the reply.",
+      "useResponseWindow": true,
+      "file": "reply-to-email.json"
+    },
+    {
+      "slug": "review-code",
+      "name": "Review code",
+      "icon": "ladybug",
+      "category": "coding",
+      "description": {
+        "en": "Finds bugs and risky spots in the selected code and suggests fixes.",
+        "vi": "Tìm lỗi và điểm rủi ro trong đoạn code đã chọn, kèm gợi ý sửa."
+      },
+      "tags": [
+        "code",
+        "review"
+      ],
+      "author": "gemkids275",
+      "prompt": "Review the selected code. List real bugs, unsafe input handling and edge cases first, then clarity or performance issues. For each point give the line or snippet, why it matters, and a short fix. Do not praise or restate the code. If you find nothing important, say so.",
+      "useResponseWindow": true,
+      "file": "review-code.json"
+    },
+    {
+      "slug": "translate-to-english",
+      "name": "Translate to English",
+      "icon": "globe",
+      "category": "translation",
+      "description": {
+        "en": "Natural English translation that keeps the tone and formatting.",
+        "vi": "Dịch sang tiếng Anh tự nhiên, giữ giọng văn và định dạng."
+      },
+      "tags": [
+        "translate",
+        "english"
+      ],
+      "author": "gemkids275",
+      "prompt": "Translate the selected text into natural, fluent English. Keep the original tone, meaning and formatting (lists, line breaks, markdown). Do not explain anything. Return only the translation.",
+      "useResponseWindow": false,
+      "file": "translate-to-english.json"
+    },
+    {
+      "slug": "translate-to-vietnamese",
+      "name": "Translate to Vietnamese",
+      "icon": "character.bubble",
+      "category": "translation",
+      "description": {
+        "en": "Natural Vietnamese translation that keeps the tone and formatting.",
+        "vi": "Dịch sang tiếng Việt tự nhiên, giữ giọng văn và định dạng."
+      },
+      "tags": [
+        "translate",
+        "vietnamese"
+      ],
+      "author": "gemkids275",
+      "prompt": "Translate the selected text into natural, fluent Vietnamese with correct diacritics. Keep the original tone, meaning and formatting (lists, line breaks, markdown). Do not explain anything. Return only the translation.",
+      "useResponseWindow": false,
+      "file": "translate-to-vietnamese.json"
+    }
+  ]
+}
