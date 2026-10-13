@@ -54,7 +54,7 @@
   <div id="category-filters" class="filter-chips" role="group" aria-label="Filter commands by category"></div>
 </section>
 
-<div id="result-count" class="result-count" aria-live="polite"></div>
+<div id="result-count" class="result-count" aria-live="polite" tabindex="-1"></div>
 
 <div class="gallery-wrapper">
 <div id="pack-bar" class="pack-bar" hidden>
@@ -73,6 +73,7 @@
     <p>Loading commands...</p>
   </div>
   <div id="cmd-grid" class="cmd-grid" style="display: none;"></div>
+  <nav id="commands-pagination" class="commands-pagination" aria-label="Pagination" hidden></nav>
   <div id="empty-state" class="cmd-state-box" style="display: none;">
     <p>No commands found matching your criteria.</p>
   </div>

@@ -55,7 +55,7 @@
   <div id="category-filters" class="filter-chips" role="group" aria-label="Lọc lệnh theo danh mục"></div>
 </section>
 
-<div id="result-count" class="result-count" aria-live="polite"></div>
+<div id="result-count" class="result-count" aria-live="polite" tabindex="-1"></div>
 
 <div class="gallery-wrapper">
 <div id="pack-bar" class="pack-bar" hidden>
@@ -74,6 +74,7 @@
     <p>Đang tải danh sách lệnh...</p>
   </div>
   <div id="cmd-grid" class="cmd-grid" style="display: none;"></div>
+  <nav id="commands-pagination" class="commands-pagination" aria-label="Phân trang" hidden></nav>
   <div id="empty-state" class="cmd-state-box" style="display: none;">
     <p>Không tìm thấy lệnh nào phù hợp với tìm kiếm.</p>
   </div>
