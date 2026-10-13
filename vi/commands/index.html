@@ -57,6 +57,17 @@
 
 <div id="result-count" class="result-count" aria-live="polite"></div>
 
+<div id="pack-bar" class="pack-bar" hidden>
+  <span id="selected-count" class="pack-count" aria-live="polite"></span>
+  <div class="pack-actions">
+    <button type="button" id="select-visible" class="btn alt">Chọn tất cả đang hiện</button>
+    <button type="button" id="clear-selection" class="btn alt" disabled>Bỏ chọn</button>
+    <button type="button" id="download-selected" class="btn btn-primary" disabled>Tải các lệnh đã chọn (0)</button>
+    <button type="button" id="download-all" class="btn alt">Tải tất cả</button>
+  </div>
+  <p id="pack-error" class="pack-error" role="alert" hidden></p>
+</div>
+
 <div id="gallery-container">
   <div id="loading-state" class="cmd-state-box">
     <p>Đang tải danh sách lệnh...</p>
@@ -78,7 +89,7 @@
       <div class="step-num">1</div>
       <div class="step-body">
         <h3 class="step-title">Tải về tệp lệnh</h3>
-        <p class="step-text">Nhấp vào nút <b>Tải về</b> trên thẻ lệnh bất kỳ ở trên để lưu tệp <code>.json</code> về máy tính của bạn.</p>
+        <p class="step-text">Nhấp <b>Tải về</b> trên thẻ lệnh để lưu lệnh đó, hoặc tích chọn nhiều thẻ (hay nhấn <b>Chọn tất cả đang hiện</b>) rồi nhấn <b>Tải các lệnh đã chọn</b>. <b>Tải tất cả</b> gói mọi lệnh vào một tệp <code>.json</code>.</p>
       </div>
     </li>
     <li class="step-card">
@@ -92,7 +103,8 @@
       <div class="step-num">3</div>
       <div class="step-body">
         <h3 class="step-title">Chọn tệp vừa tải về</h3>
-        <p class="step-text">Chọn tệp <code>.json</code> đã tải. Lệnh mới sẽ lập tức xuất hiện trong danh sách phím tắt và sẵn sàng sử dụng.</p>
+        <p class="step-text">Chọn tệp <code>.json</code> đã tải. Mọi lệnh trong tệp sẽ xuất hiện trong danh sách phím tắt và sẵn sàng sử dụng; lệnh bạn đã có được giữ nguyên, bản trùng được thêm với “(Imported)” trong tên.</p>
+        <p class="step-text pack-warning">Hãy dùng <b>Nhập…</b> trong mục <b>Lệnh</b>, không dùng <b>Khôi phục bản sao lưu</b>: khôi phục sẽ thay thế toàn bộ lệnh của bạn. Tệp có nhiều lệnh cần AI Shortcuts cho Windows/Linux hoặc macOS 1.2 trở lên; macOS cũ hơn chỉ nhập lệnh đầu tiên.</p>
       </div>
     </li>
   </ol>

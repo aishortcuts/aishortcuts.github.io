@@ -56,6 +56,17 @@
 
 <div id="result-count" class="result-count" aria-live="polite"></div>
 
+<div id="pack-bar" class="pack-bar" hidden>
+  <span id="selected-count" class="pack-count" aria-live="polite"></span>
+  <div class="pack-actions">
+    <button type="button" id="select-visible" class="btn alt">Select all shown</button>
+    <button type="button" id="clear-selection" class="btn alt" disabled>Clear</button>
+    <button type="button" id="download-selected" class="btn btn-primary" disabled>Download selected (0)</button>
+    <button type="button" id="download-all" class="btn alt">Download all</button>
+  </div>
+  <p id="pack-error" class="pack-error" role="alert" hidden></p>
+</div>
+
 <div id="gallery-container">
   <div id="loading-state" class="cmd-state-box">
     <p>Loading commands...</p>
@@ -77,7 +88,7 @@
       <div class="step-num">1</div>
       <div class="step-body">
         <h3 class="step-title">Download the command file</h3>
-        <p class="step-text">Click the <b>Download</b> button on any command card above to save its <code>.json</code> file to your computer.</p>
+        <p class="step-text">Click <b>Download</b> on a command card to save it, or tick several cards (or <b>Select all shown</b>) and press <b>Download selected</b>. <b>Download all</b> packs every command into one <code>.json</code> file.</p>
       </div>
     </li>
     <li class="step-card">
@@ -91,7 +102,8 @@
       <div class="step-num">3</div>
       <div class="step-body">
         <h3 class="step-title">Select the downloaded file</h3>
-        <p class="step-text">Select the downloaded <code>.json</code> file. The command will instantly appear in your shortcuts menu and is ready to use.</p>
+        <p class="step-text">Select the downloaded <code>.json</code> file. Every command in it appears in your shortcuts menu and is ready to use; commands you already have are kept, and a duplicate is added with “(Imported)” in its name.</p>
+        <p class="step-text pack-warning">Use <b>Import…</b> in <b>Commands</b>, not <b>Restore backup</b>: restoring replaces all your commands. A file with several commands needs AI Shortcuts for Windows/Linux, or macOS 1.2 or later; older macOS versions import only the first one.</p>
       </div>
     </li>
   </ol>

@@ -15,6 +15,11 @@
       copyPrompt: 'Copy prompt',
       copied: '✓ Copied',
       download: 'Download',
+      select: 'Select',
+      selectedCount: function (n) { return n + ' selected'; },
+      downloadSelected: function (n) { return 'Download selected (' + n + ')'; },
+      downloadAll: function (n) { return 'Download all (' + n + ')'; },
+      packError: 'Could not build the file. Please try again, or download the commands one by one.',
       loading: 'Loading commands...',
       empty: 'No commands found matching your criteria.',
       error: 'Could not load commands at this time. Please refresh the page or browse commands directly on GitHub.',
@@ -39,6 +44,11 @@
       copyPrompt: 'Sao chép prompt',
       copied: '✓ Đã sao chép',
       download: 'Tải về',
+      select: 'Chọn',
+      selectedCount: function (n) { return 'Đã chọn ' + n; },
+      downloadSelected: function (n) { return 'Tải các lệnh đã chọn (' + n + ')'; },
+      downloadAll: function (n) { return 'Tải tất cả (' + n + ')'; },
+      packError: 'Không thể tạo tệp. Vui lòng thử lại hoặc tải từng lệnh một.',
       loading: 'Đang tải danh sách lệnh...',
       empty: 'Không tìm thấy lệnh nào phù hợp với tìm kiếm.',
       error: 'Không thể tải danh sách lệnh lúc này. Vui lòng tải lại trang hoặc xem trực tiếp trên GitHub.',
@@ -70,6 +80,7 @@
   var allCommands = [];
   var activeCategory = 'all';
   var searchQuery = '';
+  var selected = {};
 
   var searchInput = document.getElementById('command-search');
   var filtersContainer = document.getElementById('category-filters');
@@ -78,6 +89,14 @@
   var loadingEl = document.getElementById('loading-state');
   var emptyEl = document.getElementById('empty-state');
   var errorEl = document.getElementById('error-state');
+  var packBar = document.getElementById('pack-bar');
+  var selectedCountEl = document.getElementById('selected-count');
+  var selectVisibleBtn = document.getElementById('select-visible');
+  var clearSelectionBtn = document.getElementById('clear-selection');
+  var downloadSelectedBtn = document.getElementById('download-selected');
+  var downloadAllBtn = document.getElementById('download-all');
+  var packErrorEl = document.getElementById('pack-error');
+  var visibleCommands = [];
 
   function removeDiacritics(str) {
     if (!str) return '';
@@ -154,6 +173,81 @@
       console.error('Copy failed', e);
     }
     document.body.removeChild(ta);
+  }
+
+  var SLUG_RE = /^[a-zA-Z0-9_-]+$/;
+  // Apple's reference date (2001-01-01) in Unix seconds: the apps decode exportDate with it.
+  var APPLE_EPOCH = 978307200;
+
+  function safeSlug(cmd) {
+    return cmd && typeof cmd.slug === 'string' && SLUG_RE.test(cmd.slug) ? cmd.slug : '';
+  }
+
+  function selectedList() {
+    return allCommands.filter(function (cmd) { return selected[safeSlug(cmd)]; });
+  }
+
+  function updatePackBar() {
+    if (!packBar) return;
+    var n = selectedList().length;
+    packBar.hidden = allCommands.length === 0;
+    selectedCountEl.textContent = t.selectedCount(n);
+    downloadSelectedBtn.textContent = t.downloadSelected(n);
+    downloadSelectedBtn.disabled = n === 0;
+    clearSelectionBtn.disabled = n === 0;
+    downloadAllBtn.textContent = t.downloadAll(allCommands.length);
+  }
+
+  // Keeps only the fields the apps read, so a pack never carries anything else.
+  function pickCommand(file) {
+    var c = file && Array.isArray(file.commands) ? file.commands[0] : null;
+    if (!c || typeof c !== 'object') throw new Error('bad command file');
+    ['id', 'name', 'prompt', 'icon'].forEach(function (k) {
+      if (typeof c[k] !== 'string' || !c[k]) throw new Error('bad field ' + k);
+    });
+    return {
+      id: c.id,
+      name: c.name,
+      prompt: c.prompt,
+      icon: c.icon,
+      useResponseWindow: c.useResponseWindow === true,
+      isBuiltIn: false,
+      hasShortcut: false,
+      preserveFormatting: c.preserveFormatting === true
+    };
+  }
+
+  function downloadPack(cmds, fileName) {
+    packErrorEl.hidden = true;
+    var requests = cmds.map(function (cmd) {
+      var slug = safeSlug(cmd);
+      if (!slug) return Promise.reject(new Error('bad slug'));
+      return fetch('/data/commands/' + encodeURIComponent(slug) + '.json').then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      }).then(pickCommand);
+    });
+    Promise.all(requests).then(function (commands) {
+      var pack = {
+        appIdentifier: 'AIShortcuts',
+        version: 1,
+        exportDate: Date.now() / 1000 - APPLE_EPOCH,
+        commands: commands
+      };
+      var blob = new Blob([JSON.stringify(pack, null, 2) + '\n'], { type: 'application/json' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    }).catch(function (err) {
+      console.error('Pack download failed', err);
+      packErrorEl.textContent = t.packError;
+      packErrorEl.hidden = false;
+    });
   }
 
   function renderCard(cmd) {
@@ -267,6 +361,26 @@
     var actions = document.createElement('div');
     actions.className = 'cmd-actions';
 
+    var pickSlug = safeSlug(cmd);
+    if (pickSlug) {
+      var pickLabel = document.createElement('label');
+      pickLabel.className = 'cmd-select';
+      var pickBox = document.createElement('input');
+      pickBox.type = 'checkbox';
+      pickBox.checked = !!selected[pickSlug];
+      pickBox.setAttribute('aria-label', t.select + ': ' + (cmd.name || pickSlug));
+      pickBox.addEventListener('change', function () {
+        if (pickBox.checked) selected[pickSlug] = true;
+        else delete selected[pickSlug];
+        updatePackBar();
+      });
+      var pickText = document.createElement('span');
+      pickText.textContent = t.select;
+      pickLabel.appendChild(pickBox);
+      pickLabel.appendChild(pickText);
+      actions.appendChild(pickLabel);
+    }
+
     var copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 'btn alt cmd-btn-copy';
@@ -277,7 +391,7 @@
     actions.appendChild(copyBtn);
 
     // Download link strictly built from validated slug
-    var slug = typeof cmd.slug === 'string' && /^[a-zA-Z0-9_-]+$/.test(cmd.slug) ? cmd.slug : '';
+    var slug = safeSlug(cmd);
     if (slug) {
       var dlLink = document.createElement('a');
       dlLink.className = 'btn btn-primary cmd-btn-download';
@@ -327,6 +441,8 @@
 
       filtered.push(cmd);
     }
+
+    visibleCommands = filtered;
 
     // Update result count
     if (resultCountEl) {
@@ -415,6 +531,28 @@
       });
     }
 
+    if (packBar) {
+      selectVisibleBtn.addEventListener('click', function () {
+        visibleCommands.forEach(function (cmd) {
+          var slug = safeSlug(cmd);
+          if (slug) selected[slug] = true;
+        });
+        filterAndRender();
+        updatePackBar();
+      });
+      clearSelectionBtn.addEventListener('click', function () {
+        selected = {};
+        filterAndRender();
+        updatePackBar();
+      });
+      downloadSelectedBtn.addEventListener('click', function () {
+        downloadPack(selectedList(), 'ai-shortcuts-commands.json');
+      });
+      downloadAllBtn.addEventListener('click', function () {
+        downloadPack(allCommands, 'ai-shortcuts-all-commands.json');
+      });
+    }
+
     if (loadingEl) loadingEl.style.display = 'block';
     if (gridEl) gridEl.style.display = 'none';
     if (emptyEl) emptyEl.style.display = 'none';
@@ -443,6 +581,7 @@
 
         buildFilterChips(categories);
         filterAndRender();
+        updatePackBar();
       })
       .catch(function (err) {
         console.error('Failed to load commands data', err);
