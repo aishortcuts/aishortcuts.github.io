@@ -164,6 +164,7 @@
 
 <section id="download">
   <h2>Tải về</h2>
+  <p class="dl-total" data-dl="total" hidden></p>
   <div class="dl">
     <div class="card">
       <div class="card-header">
@@ -171,6 +172,7 @@
         <h3>Windows</h3>
       </div>
       <p>Windows 10 trở lên, 64-bit.</p>
+      <p class="dl-count" data-dl="windows" hidden></p>
       <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-windows-x64.exe">Tải .exe</a>
     </div>
     <div class="card">
@@ -179,6 +181,7 @@
         <h3>macOS</h3>
       </div>
       <p>macOS 14 Sonoma trở lên.</p>
+      <p class="dl-count" data-dl="macos" hidden></p>
       <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/mac-v1.2/AI_Shortcuts_v1.2.dmg">Tải .dmg</a>
     </div>
     <div class="card">
@@ -187,10 +190,11 @@
         <h3>Linux</h3>
       </div>
       <p>Phiên X11, 64-bit.</p>
+      <p class="dl-count" data-dl="linux" hidden></p>
       <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-linux-x64.tar.gz">Tải .tar.gz</a>
     </div>
   </div>
-  <p class="dl-note">Tất cả phiên bản và checksum: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Bản dựng có checksum SHA-256 và chứng thực nguồn gốc build.</p>
+  <p class="dl-note">Tất cả phiên bản và checksum: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Bản dựng có checksum SHA-256 và chứng thực nguồn gốc build. <span data-dl="note" hidden>Số liệu chỉ tính lượt tải tệp phát hành từ GitHub (không phải số người dùng riêng biệt) và được cập nhật khoảng một giờ một lần.</span></p>
 </section>
 
 <section id="commands" class="gallery-teaser">
@@ -215,5 +219,6 @@ gh attestation verify &lt;file&gt; --repo gemkids275/AIShortcuts</pre></details>
   <a href="/vi/about/">Giới thiệu</a> · <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Báo lỗi</a> · <a href="https://ko-fi.com/gemkids">☕ Ủng hộ trên Ko-fi</a>
 </footer>
 </div>
+<script src="/downloads.js" defer></script>
 </body>
 </html>
