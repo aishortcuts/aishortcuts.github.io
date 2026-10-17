@@ -79,3 +79,10 @@ test('new classes never set display, so the hidden attribute keeps working (AC-7
     for (const r of rules) assert.doesNotMatch(r, /display\s*:/, `.${cls} must not set display`);
   }
 });
+
+test('robots.txt keeps crawlers out of the test files that GitHub Pages also serves', () => {
+  const robots = read('robots.txt');
+  assert.match(robots, /^Disallow: \/tests\/$/m);
+  assert.match(robots, /^Allow: \/$/m, 'the rest of the site stays crawlable');
+  assert.match(robots, /^Sitemap: /m);
+});
