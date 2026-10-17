@@ -474,6 +474,23 @@ tr:hover td {
   width: 100%;
 }
 
+.dl-total {
+  font-size: 15.5px;
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.dl-count {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
 .dl-note {
   font-size: 14.5px;
   color: var(--muted);

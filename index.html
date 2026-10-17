@@ -164,6 +164,7 @@
 
 <section id="download">
   <h2>Download</h2>
+  <p class="dl-total" data-dl="total" hidden></p>
   <div class="dl">
     <div class="card">
       <div class="card-header">
@@ -171,6 +172,7 @@
         <h3>Windows</h3>
       </div>
       <p>Windows 10 or later, 64-bit.</p>
+      <p class="dl-count" data-dl="windows" hidden></p>
       <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-windows-x64.exe">Download .exe</a>
     </div>
     <div class="card">
@@ -179,6 +181,7 @@
         <h3>macOS</h3>
       </div>
       <p>macOS 14 Sonoma or later.</p>
+      <p class="dl-count" data-dl="macos" hidden></p>
       <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/mac-v1.2/AI_Shortcuts_v1.2.dmg">Download .dmg</a>
     </div>
     <div class="card">
@@ -187,10 +190,11 @@
         <h3>Linux</h3>
       </div>
       <p>X11 session, 64-bit.</p>
+      <p class="dl-count" data-dl="linux" hidden></p>
       <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-linux-x64.tar.gz">Download .tar.gz</a>
     </div>
   </div>
-  <p class="dl-note">All versions and checksums: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Binaries ship with SHA-256 checksums and build provenance.</p>
+  <p class="dl-note">All versions and checksums: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Binaries ship with SHA-256 checksums and build provenance. <span data-dl="note" hidden>Counts reflect GitHub release downloads rather than unique users, and refresh roughly once an hour.</span></p>
 </section>
 
 <section id="commands" class="gallery-teaser">
@@ -215,5 +219,6 @@ gh attestation verify &lt;file&gt; --repo gemkids275/AIShortcuts</pre></details>
   <a href="/about/">About</a> · <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Report an issue</a> · <a href="https://ko-fi.com/gemkids">☕ Support on Ko-fi</a>
 </footer>
 </div>
+<script src="/downloads.js" defer></script>
 </body>
 </html>
