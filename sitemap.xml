@@ -21,6 +21,16 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/about/"/>
   </url>
   <url>
+    <loc>https://aishortcuts.github.io/commands/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/commands/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/commands/"/>
+  </url>
+  <url>
+    <loc>https://aishortcuts.github.io/vi/commands/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/commands/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/commands/"/>
+  </url>
+  <url>
     <loc>https://aishortcuts.github.io/guides/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://aishortcuts.github.io/guides/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://aishortcuts.github.io/vi/guides/"/>

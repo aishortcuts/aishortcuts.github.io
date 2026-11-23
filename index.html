@@ -30,7 +30,7 @@
     <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#2563eb"/><path d="M18 44 32 16l14 28M23 36h18" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span>AI Shortcuts</span>
   </a>
-  <nav><a href="#video">Watch</a><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="/guides/">Guides</a><a href="vi/">Tiếng Việt</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
+  <nav><a href="#video">Watch</a><a href="#features">Features</a><a href="/commands/">Commands</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="/guides/">Guides</a><a href="vi/">Tiếng Việt</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
 </header>
 
 <main>
@@ -177,6 +177,7 @@
 
 <section id="download">
   <h2>Download</h2>
+  <p class="dl-total" data-dl="total" hidden></p>
   <div class="dl">
     <div class="card">
       <div class="card-header">
@@ -184,7 +185,8 @@
         <h3>Windows</h3>
       </div>
       <p>Windows 10 or later, 64-bit.</p>
-      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-windows-x64.exe">Download .exe</a>
+      <p class="dl-count" data-dl="windows" hidden></p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-windows-x64.exe">Download .exe</a>
     </div>
     <div class="card">
       <div class="card-header">
@@ -192,7 +194,8 @@
         <h3>macOS</h3>
       </div>
       <p>macOS 14 Sonoma or later.</p>
-      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/mac-v1.1/AI_Shortcuts_v1.1.dmg">Download .dmg</a>
+      <p class="dl-count" data-dl="macos" hidden></p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/mac-v1.2/AI_Shortcuts_v1.2.dmg">Download .dmg</a>
     </div>
     <div class="card">
       <div class="card-header">
@@ -200,10 +203,17 @@
         <h3>Linux</h3>
       </div>
       <p>X11 session, 64-bit.</p>
-      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-linux-x64.tar.gz">Download .tar.gz</a>
+      <p class="dl-count" data-dl="linux" hidden></p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-linux-x64.tar.gz">Download .tar.gz</a>
     </div>
   </div>
-  <p class="dl-note">All versions and checksums: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Binaries ship with SHA-256 checksums and build provenance.</p>
+  <p class="dl-note">All versions and checksums: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Binaries ship with SHA-256 checksums and build provenance. <span data-dl="note" hidden>Counts reflect GitHub release downloads rather than unique users, and refresh roughly once an hour.</span></p>
+</section>
+
+<section id="commands" class="gallery-teaser">
+  <h2>Useful commands</h2>
+  <p>Browse our community collection of ready-made commands for writing, coding, translation and more. Import them directly into AI Shortcuts.</p>
+  <a class="btn btn-primary" href="/commands/">Explore commands gallery →</a>
 </section>
 
 <section id="faq">
@@ -222,5 +232,6 @@ gh attestation verify &lt;file&gt; --repo gemkids275/AIShortcuts</pre></details>
   <a href="/about/">About</a> · <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Report an issue</a> · <a href="https://ko-fi.com/gemkids">☕ Support on Ko-fi</a>
 </footer>
 </div>
+<script src="/downloads.js" defer></script>
 </body>
 </html>

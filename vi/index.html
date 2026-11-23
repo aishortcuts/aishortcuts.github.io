@@ -30,7 +30,7 @@
     <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#2563eb"/><path d="M18 44 32 16l14 28M23 36h18" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span>AI Shortcuts</span>
   </a>
-  <nav><a href="#video">Xem video</a><a href="#features">Tính năng</a><a href="#download">Tải về</a><a href="#faq">Hỏi đáp</a><a href="/vi/guides/">Hướng dẫn</a><a href="../">English</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
+  <nav><a href="#video">Xem video</a><a href="#features">Tính năng</a><a href="/vi/commands/">Lệnh</a><a href="#download">Tải về</a><a href="#faq">Hỏi đáp</a><a href="/vi/guides/">Hướng dẫn</a><a href="../">English</a><a href="https://github.com/gemkids275/AIShortcuts">GitHub</a></nav>
 </header>
 
 <main>
@@ -177,6 +177,7 @@
 
 <section id="download">
   <h2>Tải về</h2>
+  <p class="dl-total" data-dl="total" hidden></p>
   <div class="dl">
     <div class="card">
       <div class="card-header">
@@ -184,7 +185,8 @@
         <h3>Windows</h3>
       </div>
       <p>Windows 10 trở lên, 64-bit.</p>
-      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-windows-x64.exe">Tải .exe</a>
+      <p class="dl-count" data-dl="windows" hidden></p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-windows-x64.exe">Tải .exe</a>
     </div>
     <div class="card">
       <div class="card-header">
@@ -192,7 +194,8 @@
         <h3>macOS</h3>
       </div>
       <p>macOS 14 Sonoma trở lên.</p>
-      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/mac-v1.1/AI_Shortcuts_v1.1.dmg">Tải .dmg</a>
+      <p class="dl-count" data-dl="macos" hidden></p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/mac-v1.2/AI_Shortcuts_v1.2.dmg">Tải .dmg</a>
     </div>
     <div class="card">
       <div class="card-header">
@@ -200,10 +203,17 @@
         <h3>Linux</h3>
       </div>
       <p>Phiên X11, 64-bit.</p>
-      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v1/AI-Shortcuts-linux-x64.tar.gz">Tải .tar.gz</a>
+      <p class="dl-count" data-dl="linux" hidden></p>
+      <a class="btn btn-primary" href="https://github.com/gemkids275/AIShortcuts/releases/download/win-v2/AI-Shortcuts-linux-x64.tar.gz">Tải .tar.gz</a>
     </div>
   </div>
-  <p class="dl-note">Tất cả phiên bản và checksum: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Bản dựng có checksum SHA-256 và chứng thực nguồn gốc build.</p>
+  <p class="dl-note">Tất cả phiên bản và checksum: <a href="https://github.com/gemkids275/AIShortcuts/releases">GitHub Releases</a>. Bản dựng có checksum SHA-256 và chứng thực nguồn gốc build. <span data-dl="note" hidden>Số liệu chỉ tính lượt tải tệp phát hành từ GitHub (không phải số người dùng riêng biệt) và được cập nhật khoảng một giờ một lần.</span></p>
+</section>
+
+<section id="commands" class="gallery-teaser">
+  <h2>Thư viện lệnh hữu ích</h2>
+  <p>Khám phá bộ sưu tập lệnh dựng sẵn do cộng đồng đóng góp cho viết lách, lập trình, dịch thuật và nhiều hơn nữa. Nhập trực tiếp vào AI Shortcuts.</p>
+  <a class="btn btn-primary" href="/vi/commands/">Khám phá thư viện lệnh →</a>
 </section>
 
 <section id="faq">
@@ -222,5 +232,6 @@ gh attestation verify &lt;file&gt; --repo gemkids275/AIShortcuts</pre></details>
   <a href="/vi/about/">Giới thiệu</a> · <a href="https://github.com/gemkids275/AIShortcuts">GitHub</a> · <a href="https://github.com/gemkids275/AIShortcuts/issues">Báo lỗi</a> · <a href="https://ko-fi.com/gemkids">☕ Ủng hộ trên Ko-fi</a>
 </footer>
 </div>
+<script src="/downloads.js" defer></script>
 </body>
 </html>
