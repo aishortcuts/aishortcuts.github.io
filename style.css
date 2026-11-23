@@ -320,6 +320,28 @@ figcaption, .app-window figcaption {
   margin: 36px 0 44px;
 }
 
+/* 60-second overview video */
+.promo {
+  padding-top: 8px;
+}
+
+.promo-lead {
+  color: var(--muted);
+  max-width: 720px;
+  margin: -6px 0 18px;
+  line-height: 1.6;
+}
+
+.app-window video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: #06131f;
+  aspect-ratio: 16 / 9;
+}
+
 /* General Sections & Cards Grid */
 section {
   padding: 38px 0;

@@ -1,0 +1,45 @@
+WEBVTT
+
+1
+00:00:00.267 --> 00:00:06.633
+Bạn vừa viết xong một đoạn văn. Giờ phải sửa lại bằng tay, hoặc dán sang cửa sổ chat rồi chép ngược trở về.
+
+2
+00:00:07.367 --> 00:00:08.600
+Có một vòng lặp nhanh hơn.
+
+3
+00:00:09.333 --> 00:00:14.100
+Chọn một lệnh. Sửa lỗi, viết lại, chuyên nghiệp hơn, ngắn gọn hơn.
+
+4
+00:00:14.833 --> 00:00:18.367
+Chữ tự sửa ngay tại chỗ. Hoàn tác là trả lại bản gốc.
+
+5
+00:00:19.100 --> 00:00:23.700
+Docs, Slack, VS Code, hay hộp thư. Cùng một thao tác, ở mọi nơi.
+
+6
+00:00:24.433 --> 00:00:28.433
+Tự viết lệnh của bạn. Sắp xếp lại, sao lưu, chia sẻ.
+
+7
+00:00:29.167 --> 00:00:32.500
+Đám mây hay chạy tại máy, và mỗi lệnh một model riêng.
+
+8
+00:00:33.233 --> 00:00:43.867
+Bên trong: một bộ lắng nghe phím tắt toàn cục, mỗi nhà cung cấp một adapter, và một bộ ghi sửa thẳng vào ứng dụng. Trên macOS là Accessibility API, không đi vòng qua clipboard.
+
+9
+00:00:44.600 --> 00:00:50.567
+Không telemetry. Key nằm trong keychain của hệ điều hành. Chữ của bạn chỉ đi tới nhà cung cấp mà bạn chọn.
+
+10
+00:00:51.300 --> 00:00:55.333
+Miễn phí, mã nguồn mở, trên macOS, Windows và Linux.
+
+11
+00:00:56.067 --> 00:00:57.167
+AI Shortcuts.
